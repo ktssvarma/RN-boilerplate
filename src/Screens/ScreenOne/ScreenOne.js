@@ -1,6 +1,6 @@
 import { StatusBar, Text, TouchableOpacity, View } from 'react-native'
 import React, { Component } from 'react'
-import { screenTwoRoute } from '../../constants';
+import { screenThreeRoute } from '../../constants';
 
 export class ScreenOne extends Component {
   render() {
@@ -10,7 +10,7 @@ export class ScreenOne extends Component {
         <TouchableOpacity
           style={{height: 40, backgroundColor: 'teal'}}
           onPress={() => {
-            navigation.navigate(screenTwoRoute);
+            navigation.navigate(screenThreeRoute);
           }}
         />
         <Text>ScreenOne</Text>
