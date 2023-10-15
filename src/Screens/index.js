@@ -1,30 +1,17 @@
 import React, { memo } from 'react';
-import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { screenOneRoute, screenTwoRoute } from '../constants';
-import ScreensList from './Navigation/Screens-list';
+import { tabScreenRoute } from '../constants';
+import {ScreensList} from './Navigation/Screens-list';
+import headerStyles from './Navigation/styles/headerStyles';
 
 const Stack = createStackNavigator();
 
-const styles = StyleSheet.create({
-  headerStyle: {
-    backgroundColor: 'teal',
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
-  },
-  headerTitleStyle: {
-    fontSize: 16,
-    fontStyle: 'italic',
-    color: 'lavender',
-  },
-});
-
 const ScreensContainer = () => {
   const screenOptions = {
-    headerStyle: styles.headerStyle,
+    headerStyle: headerStyles.headerStyle,
     headerTitleAlign: 'center',
-    headerTitleStyle: styles.headerTitleStyle,
+    headerTitleStyle: headerStyles.headerTitleStyle,
     headerMode: 'float',
     headerBackTitleVisible: false,
     headerBackAllowFontScaling: false,
@@ -45,7 +32,7 @@ const ScreensContainer = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={screenOneRoute} screenOptions={screenOptions}>
+      <Stack.Navigator initialRouteName={tabScreenRoute} screenOptions={screenOptions}>
         {renderScreens}
       </Stack.Navigator>
     </NavigationContainer>
