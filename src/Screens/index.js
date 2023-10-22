@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { tabScreenRoute } from '../constants';
 import {ScreensList} from './Navigation/Screens-list';
 import headerStyles from './Navigation/styles/headerStyles';
+import { View } from 'react-native';
 
 const Stack = createStackNavigator();
 
@@ -31,11 +32,15 @@ const ScreensContainer = () => {
   ));
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName={tabScreenRoute} screenOptions={screenOptions}>
-        {renderScreens}
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View style={{flex: 1, backgroundColor: 'blue'}}>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName={tabScreenRoute}
+          screenOptions={screenOptions}>
+          {renderScreens}
+        </Stack.Navigator>
+      </NavigationContainer>
+    </View>
   );
 };
 
