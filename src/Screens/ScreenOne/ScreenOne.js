@@ -8,8 +8,9 @@ export class ScreenOne extends Component {
     const {navigation} = this.props;
     return (
       <ThemeContext.Consumer>
-        {({theme}) => (
-          <View style={{paddingTop: 0, flex: 1, backgroundColor: theme.background}}>
+        {({theme, toggleTheme}) => (
+          <View
+            style={{paddingTop: 0, flex: 1, backgroundColor: theme.background}}>
             <TouchableOpacity
               style={{height: 40, backgroundColor: 'teal'}}
               onPress={() => {
@@ -17,6 +18,12 @@ export class ScreenOne extends Component {
               }}
             />
             <Text>ScreenOne</Text>
+            <TouchableOpacity
+              style={{height: 40, backgroundColor: 'teal'}}
+              onPress={() => {
+                toggleTheme();
+              }}
+            />
           </View>
         )}
       </ThemeContext.Consumer>
